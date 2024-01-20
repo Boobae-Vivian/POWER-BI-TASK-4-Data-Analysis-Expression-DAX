@@ -36,7 +36,10 @@ Demonstrating proficiency in these skills and concepts will not only showcase a 
 
 ### 1. Develop A Measure To Calculate The Average Age Of Depositors:
 
-DAX Measures are calculations that aggregate data and provide insights into the underlying data model. It allows users to perform calculations like sums, averages, counts etc based on specified conditions. Measures are like containers that give rise to a single value which can be distributed accross different categories. having known this, to develop a measure to calculate the average age of depositors, we would first and foremost click on new measure found on the power bi ribbon and create new measure, the moment you do that a measurre pops up directly beneath the power bi ribbon and also on the data pane having a calculator icon beside it signifying its a measure,edit the measure beneath the power bi ribbon by cleaning of and replacing with average age of depositors since that is what we want to calculate. After which, put in the equality sign and apply the average function and in parenthese fill in the age column along side with the table it comes with and click on enter to execute the analysis. its syntax would be:
+DAX Measures serve as calculations that aggregate data, providing insights into the underlying data model. They empower users to perform calculations, such as sums, averages, and counts, based on specified conditions. Measures act as containers generating a single value, distributable across different categories. To create a measure for calculating the average age of depositors, follow these steps:
+
+- Begin by clicking on the "New Measure" option in the Power BI ribbon to create a new measure. Once selected, a measure will appear directly beneath the Power BI ribbon and in the data pane, marked by a calculator icon, signifying its nature as a measure.
+- Edit the newly created measure beneath the Power BI ribbon by replacing the default content with "Average Age of Depositors," reflecting the intended calculation. Then, use the equal sign and apply the average function. In parentheses, specify the age column along with the corresponding table. Execute the analysis by pressing Enter. The syntax would be as follows:
 
 ```powerbi
 SYNTAX:
@@ -46,7 +49,49 @@ APPLYING SYNTAX:
 Average age of depositors = AVERAGE('Bank full'[age])
 ```
 
-The calculated result will not be found in our table because its neither a calculated column or calculated table. Therefore, to view this result, we would use the card visual in the visualization pane by selecting the card visual to appear on the canvas page, and dragging our result which would be found in the data pane as average age of depositors into the card visuals. This visualization was further worked on using the format page option in the visualization pane to give it a suitable background colour, title name and good call out value
+- Since the calculated result is neither a calculated column nor a calculated table, view the outcome using the card visual in the visualization pane. Add a card visual to the canvas page, dragging the result (Average Age of Depositors) from the data pane into the card visual.
+- The resulting visualization will display the average age of depositors, in this case, 40.94. Enhance the visualization by utilizing the "Format" page option in the visualization pane, allowing for customization of background color, title, and call-out values to ensure a visually appealing presentation.
+
+![](Task4.png)
+
+### 2. Introduce A New Column Named 'Age Band' With The Following Categories:
+
+   - 'Young' for ages below 30
+   - 'Mid-aged' for ages between 30 and 50
+   - 'Old' for ages above 50
+
+     In this scenario, as we are not aggregating a single value, we will use calculated columns instead of measures. To introduce a new column named 'Age Band', categorizing ages as 'Young' for those below 30, 'Mid-aged' for ages between 30 and 50, and 'Old' for ages above 50, follow these steps:
+      - Begin by clicking on the table view icon on the left side of the Power BI environment to visualize the table and the existing 'Age' column that will be manipulated.
+      - Click on "New Column" in the Power BI ribbon to create a new calculated column. A column name will appear beneath the Power BI ribbon and in the data pane, marked with an EFX icon, indicating its status as a column.
+      - Edit the column name beneath the Power BI ribbon by replacing it with 'Age Band,' reflecting the nature of the new calculation. Then, use the equal sign and apply the 'IF' function. In parentheses, specify the conditions to be met, and execute the analysis by pressing Enter. The syntax would be as follows:
+
+       ```powerbi
+       SYNTAX:
+       Age Band = IF('Bank full'[Age]<30, "Young", IF(AND('Bank full'[Age]>29, 'Bank full'[Age]<51), "Mid-aged", "Old"))
+       ```
+        - The calculated result of this analysis will be visible in the table since it is a calculated column and not a measure.
+
+          ![](Task4a.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
