@@ -6,7 +6,7 @@ In this data-driven exploration of the 'Bank Full Distribution' dataset, we will
 
 ## PROBLEM STATEMENT
 
-The task at hand revolves around a comprehensive analysis of the 'Bank Full Distribution' dataset. The specific challenges to address include to:
+The task at hand revolves around a comprehensive analysis of the 'Bank Full Distribution' dataset. The specific challenges to address include:
 
 1. Develop a measure to calculate the average age of depositors.
 2. Introduce a new column named 'Age Band' with the following categories:
@@ -35,6 +35,19 @@ Demonstrating proficiency in these skills and concepts will not only showcase a 
 ## ANALYSIS, DISCUSSIONS AND RESULTS
 
 ### 1. Develop A Measure To Calculate The Average Age Of Depositors:
+
+DAX Measures are calculations that aggregate data and provide insights into the underlying data model. It allows users to perform calculations like sums, averages, counts etc based on specified conditions. Measures are like containers that give rise to a single value which can be distributed accross different categories. having known this, to develop a measure to calculate the average age of depositors, we would first and foremost click on new measure found on the power bi ribbon and create new measure, the moment you do that a measurre pops up directly beneath the power bi ribbon and also on the data pane having a calculator icon beside it signifying its a measure,edit the measure beneath the power bi ribbon by cleaning of and replacing with average age of depositors since that is what we want to calculate. After which, put in the equality sign and apply the average function and in parenthese fill in the age column along side with the table it comes with and click on enter to execute the analysis. its syntax would be:
+
+```powerbi
+SYNTAX:
+MEASURE = AVERAGE(TABLE_NAME[COLUMN_NAME])
+
+APPLYING SYNTAX:
+Average age of depositors = AVERAGE('Bank full'[age])
+```
+
+The calculated result will not be found in our table because its neither a calculated column or calculated table. Therefore, to view this result, we would use the card visual in the visualization pane by selecting the card visual to appear on the canvas page, and dragging our result which would be found in the data pane as average age of depositors into the card visuals. This visualization was further worked on using the format page option in the visualization pane to give it a suitable background colour, title name and good call out value
+
 
 
 
